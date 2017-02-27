@@ -161,6 +161,10 @@ FEED_EXPORTERS_BASE = {
 
 FILES_STORE_S3_ACL = 'private'
 
+FTP_USER = 'anonymous'
+FTP_PASSWORD = 'guest'
+FTP_PASSIVE_MODE = True
+
 HTTPCACHE_ENABLED = False
 HTTPCACHE_DIR = 'httpcache'
 HTTPCACHE_IGNORE_MISSING = False
@@ -208,7 +212,7 @@ MEMDEBUG_ENABLED = False        # enable memory debugging
 MEMDEBUG_NOTIFY = []            # send memory debugging report by mail at engine shutdown
 
 MEMUSAGE_CHECK_INTERVAL_SECONDS = 60.0
-MEMUSAGE_ENABLED = False
+MEMUSAGE_ENABLED = True
 MEMUSAGE_LIMIT_MB = 0
 MEMUSAGE_NOTIFY_MAIL = []
 MEMUSAGE_REPORT = False
