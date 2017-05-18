@@ -13,7 +13,6 @@ Scrapy developers, if you add a setting here remember to:
 
 """
 
-import os
 import sys
 from importlib import import_module
 from os.path import join, abspath, dirname
@@ -114,13 +113,9 @@ DOWNLOADER_STATS = True
 
 DUPEFILTER_CLASS = 'scrapy.dupefilters.RFPDupeFilter'
 
-try:
-    EDITOR = os.environ['EDITOR']
-except KeyError:
-    if sys.platform == 'win32':
-        EDITOR = '%s -m idlelib.idle'
-    else:
-        EDITOR = 'vi'
+EDITOR = 'vi'
+if sys.platform == 'win32':
+    EDITOR = '%s -m idlelib.idle'
 
 EXTENSIONS = {}
 
@@ -219,7 +214,6 @@ MEMUSAGE_CHECK_INTERVAL_SECONDS = 60.0
 MEMUSAGE_ENABLED = True
 MEMUSAGE_LIMIT_MB = 0
 MEMUSAGE_NOTIFY_MAIL = []
-MEMUSAGE_REPORT = False
 MEMUSAGE_WARNING_MB = 0
 
 METAREFRESH_ENABLED = True
